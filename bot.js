@@ -62,14 +62,14 @@ if(input == "+INSPIRATIONALQUOTE"){
 }
 
 // Meme JPG Commands
-if(input == "+BOI" || input == "+DELETTHIS" || input == "+M2K" || input == "+SHOTS" || input == "+DIP" || input == "+B&" || input == "+BAKA" || input == "+EATSHIT" || input == "+HOLLYWOOD" || input == "+NAIROAPEX" || input == "+NODICK" || input == "+WHAT"){
+if(input == "+BOI" || input == "+DELETTHIS" || input == "+SHOTS" || input == "+DIP" || input == "+B&" || input == "+BAKA" || input == "+HOLLYWOOD" || input == "+NAIROAPEX" || input == "+WHAT"){
 	const MemeJPG = require('./commands/memejpg.js')
 	MemeJPG(input)
 	msg.channel.sendFile(require('path').join(__dirname, `${memeResult}.jpg`));
 }
 
 //Meme Png Commands
-if(input == "+ABSOLUTELYSOLID" || input == "+ADDUP" || input == "+ATTENTION" || input == "+MICDROP" || input == "+THEHARDREAD" || input == "+THOTS" ){
+if(input == "+ABSOLUTELYSOLID" || input == "+ADDUP" || input == "+ATTENTION" || input == "+MICDROP" || input == "+THEHARDREAD"){
 	const MemeJPG = require('./commands/memejpg.js')
 	MemeJPG(input)
 	msg.channel.sendFile(require('path').join(__dirname, `${memeResult}.png`));	

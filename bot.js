@@ -96,4 +96,4 @@ if(input.startsWith("+COIN")){
 
 });
 
-Aigis.login("MjU4NDMzMTA5OTcwNzgwMTYw.XikAuw.jS654jSQI5oyeBhlKK6jKZwSFPw");
+Aigis.login(process.env.BOT_TOKEN);

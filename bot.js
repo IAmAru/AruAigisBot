@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const {Client, RichEmbed} = require('discord.js');
 const Aigis = new Discord.Client();
-const embed = new RichEmbed();
+const embed = new Discord.RichEmbed();
 
 Aigis.on('ready', () => {
   console.log(`Logged in as ${Aigis.user.tag}!`);

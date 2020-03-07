@@ -1,4 +1,5 @@
 //Coinflip Function [Embed]
+
 function Coin(input) {
     const { Discord, RichEmbed }  = require('discord.js')
     const embed = new RichEmbed();
@@ -45,12 +46,10 @@ function Coin(input) {
             if (heads === coinSetLengthNumOld) {
                 embed.setColor("0xFF0000");
                 embed.setDescription(`**Heads** won with a final score of:\n\n**Heads:** ${heads}\n**Tails:** ${tails}\n`);
-                var coinCounter = 0;
                 embedMsg = embed;
             } else if (tails === coinSetLengthNumOld) {
                 embed.setColor("0x0066FF");
                 embed.setDescription(`**Tails** won with a final score of:\n\n**Heads:** ${heads}\n**Tails:** ${tails}\n`);
-                var coinCounter = 0;
                 embedMsg = embed;
             }
         }

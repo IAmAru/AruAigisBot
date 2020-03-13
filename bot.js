@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const {Client, RichEmbed} = require('discord.js');
 const Aigis = new Discord.Client();
+const embed = new RichEmbed();
 
 Aigis.on('ready', () => {
   console.log(`Logged in as ${Aigis.user.tag}!`);
@@ -51,13 +52,15 @@ if(input == "+WHOISDEBESS"){
 //money match maker
 if(input == "+MMMAKER"){
 	const MMMaker = require('./commands/mmmaker.js')
-	MMMaker(input)
+	MMMaker(input);
 	msg.channel.send(`${user1} vs ${user2} ${situation}`);
 }
 //Inspirational Quote
 if(input == "+INSPIRATIONALQUOTE"){
-	const InspirationalQuote = require('./commands/inspirationalquote.js')
-	InspirationalQuote(input)
+	const InspirationalQuote = require('./commands/inspirationalquote.js');
+	InspirationalQuote(input);
+	embed.setTitle(embedTitle);
+	embed.setDescription(embedDescription);
     msg.channel.send(embedMsg);
 }
 
@@ -85,15 +88,20 @@ if(input == "+DIP" || input == "+DONT" || input == "+JUSTDOIT" || input == "+PIN
 if(input.startsWith("+ROLL D")){
 	const Roll = require('./commands/dice.js')
 	Roll(input)
-    msg.channel.send(embedMsg);
+	embed.setTitle(embedTitle);
+	embed.setColor(embedColor);
+	embed.setDescription(embedDescription);
+	msg.channel.send(embed);
 }
 //Coinflip Function [Embed]
 if(input.startsWith("+COIN")){
 	const Coin = require('./commands/coin.js'); 
-	Coin(input)
-	msg.channel.send(embedMsg)
+	Coin(input);
+	embed.setTitle(embedTitle);
+	embed.setColor(embedColor);
+	embed.setDescription(embedDescription);
+	msg.channel.send(embed);
 	}
-
 });
 
 Aigis.login(process.env.BOT_TOKEN);

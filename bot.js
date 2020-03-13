@@ -61,7 +61,7 @@ if(input == "+INSPIRATIONALQUOTE"){
 	InspirationalQuote(input);
 	embed.setTitle(embedTitle);
 	embed.setDescription(embedDescription);
-    msg.channel.send(embedMsg);
+    msg.channel.send(embed);
 }
 
 // Meme JPG Commands

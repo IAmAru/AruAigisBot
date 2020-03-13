@@ -1,24 +1,41 @@
 //Coinflip Function
 
 function Coin(input) {
-    const { Discord, RichEmbed }  = require('discord.js')
-    const embed = new RichEmbed();
-
     var coinCounter = 0; //Counts how many times the coin's been flipped at all.
     var heads = 0; // Obviously, counts the number of heads.
     var tails = 0; // Ditto...
 
+<<<<<<< HEAD
+=======
+    var coinCounter = 0; //Counts how many times the coin's been flipped at all.
+    var heads = 0; // Obviously, counts the number of heads.
+    var tails = 0; // Ditto...
+
+>>>>>>> f2de879f6b21ed8225180947ff6c561c8c889b30
     if (input.length === 5) { //checks if input = +roll or +roll [number]
         //To be able to use the .slice function, I need the coin var. to be a string.
         var coin = `${Math.random()}`
         var random_integer = coin.slice(coin.length - 1) // The -1 ensures I'll always take the last number.
 
+<<<<<<< HEAD
+        embedTitle = ":moneybag: Coin Toss!"
+=======
         embed.setTitle(":moneybag: Coin Toss!")
+>>>>>>> f2de879f6b21ed8225180947ff6c561c8c889b30
 
         // To compare from Heads and Tails, I'll consider Even and Odd numbers.
         // If the last number from the random variable from before is even, it'll be considered as heads.
 
         if(random_integer % 2 == 0){
+<<<<<<< HEAD
+            embedColor = "0xFF0000";
+            embedDescription = "The **coin** landed on **heads**!";
+
+        // If not, it'll be considered as tails.
+        } else if(random_integer != 0) {
+            embedColor = "0x0066FF";
+            embedDescription = "The **coin** landed on **tails**!";
+=======
             embed.setColor("0xFF0000");
             embed.setDescription("The **coin** landed on **heads**!");
             embedMsg = embed;
@@ -28,6 +45,7 @@ function Coin(input) {
             embed.setColor("0x0066FF");
             embed.setDescription("The **coin** landed on **tails**!");
             embedMsg = embed;
+>>>>>>> f2de879f6b21ed8225180947ff6c561c8c889b30
         }
     }
 
@@ -40,9 +58,15 @@ function Coin(input) {
     
         //Throws this error in case it's as a string of the specified sizes by checking if the length is invalid.    
         if(isNaN(coinSetLength)){
+<<<<<<< HEAD
+            embedTitle = ":moneybag: Coin Toss! (Error 2)"
+            embedDescription = "Could not process input. \nPlease try again with any digit under 1000.";
+            embedColor = "0xFFFFFF"
+=======
             embed.setTitle(":moneybag: Coin Toss! (Error 2)")
             embed.setDescription("Could not process input. \nPlease try again with any digit under 1000.");
             embedMsg = embed;
+>>>>>>> f2de879f6b21ed8225180947ff6c561c8c889b30
         }
         // This allows me to iterate through it in the while loop coming up.
         
@@ -51,6 +75,7 @@ function Coin(input) {
 
         if (coinSetLength == 2) {
             var coinSetLengthNew = 3;
+<<<<<<< HEAD
         }
 
         //Checks if the number provided is odd and able to declare a winner.
@@ -58,13 +83,27 @@ function Coin(input) {
             // Now it sets the max. amount of coinflips possible.
             var coinSetLengthNew = 2 * coinSetLength - 1;
         }
+=======
+        }
+
+        //Checks if the number provided is odd and able to declare a winner.
+        else if (coinSetLength % 2 != 0) {
+            // Now it sets the max. amount of coinflips possible.
+            var coinSetLengthNew = 2 * coinSetLength - 1;
+        }
+>>>>>>> f2de879f6b21ed8225180947ff6c561c8c889b30
         
         //Now it checks if it's even and if it's not 2. If that's the case, throws an error.
         else if(coinSetLength % 2 == 0 && coinSetLength != 2) {
             
+<<<<<<< HEAD
+            embedTitle = ":moneybag: Coin Toss! (Error 1)"
+            embedDescription = "Could not process input.\nPlease try again with any odd digit under 1000.";
+=======
             embed.setTitle(":moneybag: Coin Toss! (Error 1)")
             embed.setDescription("Could not process input.\nPlease try again with any odd digit under 1000.");
             embedMsg = embed;
+>>>>>>> f2de879f6b21ed8225180947ff6c561c8c889b30
         }
 
         //Now that it's past everything,
@@ -72,7 +111,11 @@ function Coin(input) {
             // Same method of declaring a winner as before-- even and odd numbers.
             var coin = `${Math.random()}`
             var random_integer = coin.slice(coin.length - 1)
+<<<<<<< HEAD
+            embedTitle = `:moneybag: Coin Toss! (${coinSetLength}/${coinSetLengthNew})`;
+=======
             embed.setTitle(`:moneybag: Coin Toss! (${coinSetLength}/${coinSetLengthNew})`)
+>>>>>>> f2de879f6b21ed8225180947ff6c561c8c889b30
            
             if (random_integer % 2 == 0) {
                 var heads = heads + 1; //Adding a point per iteration to the winner.
@@ -84,6 +127,14 @@ function Coin(input) {
 
             // Checks for a winner. If false, the loop continues.
             if (heads == coinSetLength) {
+<<<<<<< HEAD
+                embedColor = "0xFF0000";
+                embedDescription = `**Heads** won with a final score of:\n\n**Heads:** ${heads}\n**Tails:** ${tails}\n`;
+                break;
+            } else if (tails == coinSetLength) {
+                embedColor = "0x0066FF";
+                embedDescription = `**Tails** won with a final score of:\n\n**Heads:** ${heads}\n**Tails:** ${tails}\n`;
+=======
                 embed.setColor("0xFF0000");
                 embed.setDescription(`**Heads** won with a final score of:\n\n**Heads:** ${heads}\n**Tails:** ${tails}\n`);
                 embedMsg = embed;
@@ -92,14 +143,21 @@ function Coin(input) {
                 embed.setColor("0x0066FF");
                 embed.setDescription(`**Tails** won with a final score of:\n\n**Heads:** ${heads}\n**Tails:** ${tails}\n`);
                 embedMsg = embed;
+>>>>>>> f2de879f6b21ed8225180947ff6c561c8c889b30
                 break;
             }
         }
     } else {
         //Throws this error in case it's either a number over 1,000 or anything else, such as a string.
+<<<<<<< HEAD
+        embedTitle = ":moneybag: Coin Toss! (Error 2)";
+        embedDescription = "Could not process input. \nPlease try again with any digit under 1000.";
+        embedColor = "0xFFFFFF"
+=======
         embed.setTitle(":moneybag: Coin Toss! (Error 2)")
         embed.setDescription("Could not process input. \nPlease try again with any digit under 1000.");
         embedMsg = embed;
+>>>>>>> f2de879f6b21ed8225180947ff6c561c8c889b30
     }   
 }
 
